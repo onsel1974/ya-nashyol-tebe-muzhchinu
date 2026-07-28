@@ -1,6 +1,6 @@
 /* ==========================================================
    Я нашёл тебе мужчину
-   Петербургская версия оформления
+   Петербургская версия
    ========================================================== */
 
 :root {
@@ -20,9 +20,9 @@
 }
 
 
-/* ----------------------------------------------------------
-   Базовые настройки
-   ---------------------------------------------------------- */
+/* ==========================================================
+   БАЗОВЫЕ НАСТРОЙКИ
+   ========================================================== */
 
 * {
     margin: 0;
@@ -56,12 +56,13 @@ body {
 }
 
 
-/* ----------------------------------------------------------
-   Полоска прогресса чтения
-   ---------------------------------------------------------- */
+/* ==========================================================
+   ПРОГРЕСС ЧТЕНИЯ
+   ========================================================== */
 
 .progress {
     position: fixed;
+
     top: 0;
     left: 0;
 
@@ -72,12 +73,14 @@ body {
 
     z-index: 9999;
 
-    box-shadow: 0 0 6px rgba(101, 123, 141, 0.25);
+    box-shadow:
+        0 0 6px rgba(101, 123, 141, 0.25);
 }
 
 
 /* ==========================================================
-   ВНУТРЕННЯЯ СТРАНИЦА STORY.HTML
+   STORY.HTML
+   ВНУТРЕННЯЯ СТРАНИЦА С АННОТАЦИЕЙ
    ========================================================== */
 
 .cover {
@@ -150,12 +153,14 @@ body {
     font-family: "Literata", serif;
 
     font-size: 12px;
-    font-weight: 400;
 
     letter-spacing: 5px;
+
     text-transform: uppercase;
 }
 
+
+/* На случай использования h1 вне новой обложки */
 
 h1 {
     color: var(--title);
@@ -189,6 +194,7 @@ h1 {
     margin: 0 auto 25px;
 
     font-size: 19px;
+
     line-height: 1.85;
 }
 
@@ -208,9 +214,9 @@ h1 {
 }
 
 
-/* ----------------------------------------------------------
-   Кнопки
-   ---------------------------------------------------------- */
+/* ==========================================================
+   КНОПКИ STORY.HTML
+   ========================================================== */
 
 .start-button {
     display: inline-block;
@@ -253,7 +259,7 @@ h1 {
 }
 
 
-/* ссылка обратно на обложку со story.html */
+/* ссылка обратно на визуальную обложку */
 
 .cover-link {
     display: block;
@@ -278,12 +284,13 @@ h1 {
 
 .cover-link:hover {
     color: var(--accent-dark);
+
     opacity: 1;
 }
 
 
 /* ==========================================================
-   СТРАНИЦЫ ГЛАВ
+   ГЛАВЫ
    ========================================================== */
 
 .chapter {
@@ -303,9 +310,9 @@ h1 {
 }
 
 
-/* ----------------------------------------------------------
-   Номер и название главы
-   ---------------------------------------------------------- */
+/* ==========================================================
+   НОМЕР И НАЗВАНИЕ ГЛАВЫ
+   ========================================================== */
 
 .chapter-number {
     color: var(--muted);
@@ -351,14 +358,16 @@ h1 {
 }
 
 
-/* ----------------------------------------------------------
-   Основной текст
-   ---------------------------------------------------------- */
+/* ==========================================================
+   ТЕКСТ ГЛАВ
+   ========================================================== */
 
 .chapter p {
     margin-bottom: 1.45em;
 }
 
+
+/* Буквица */
 
 .chapter-title + p::first-letter {
     float: left;
@@ -376,6 +385,8 @@ h1 {
 }
 
 
+/* Финальные строки */
+
 .ending {
     margin-top: 38px;
 
@@ -391,6 +402,7 @@ h1 {
 
 /* ==========================================================
    НАВИГАЦИЯ ГЛАВ
+   ← 1       Начало       3 →
    ========================================================== */
 
 .navigation {
@@ -412,12 +424,25 @@ h1 {
 }
 
 
+/* Все ссылки */
+
 .navigation a {
     color: var(--accent-dark);
 
     text-decoration: none;
 
+    min-width: 44px;
+    min-height: 44px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
     transition:
+        background-color 0.2s ease,
         color 0.2s ease,
         opacity 0.2s ease;
 }
@@ -425,30 +450,55 @@ h1 {
 
 .navigation a:hover {
     color: var(--title);
+
+    background:
+        rgba(101, 123, 141, 0.10);
 }
 
+
+/* Левая кнопка */
 
 .navigation > :first-child {
     justify-self: start;
 }
 
 
+/* Центральное "Начало" */
+
 .navigation > :nth-child(2) {
     justify-self: center;
 }
 
+
+.navigation > a:nth-child(2) {
+    min-width: auto;
+    min-height: 44px;
+
+    padding: 0 10px;
+
+    border-radius: 4px;
+}
+
+
+/* Правая кнопка */
 
 .navigation > :last-child {
     justify-self: end;
 }
 
 
-/* ссылка на визуальную обложку под навигацией */
+/* ==========================================================
+   ССЫЛКА "ОБЛОЖКА" ПОД НАВИГАЦИЕЙ
+   ========================================================== */
 
 .chapter-cover-link {
     display: block;
 
-    margin-top: 24px;
+    width: max-content;
+
+    margin: 24px auto 0;
+
+    padding: 4px 8px;
 
     text-align: center;
 
@@ -460,7 +510,7 @@ h1 {
 
     text-decoration: none;
 
-    opacity: 0.75;
+    opacity: 0.72;
 
     transition:
         color 0.2s ease,
@@ -470,11 +520,15 @@ h1 {
 
 .chapter-cover-link:hover {
     color: var(--accent-dark);
+
     opacity: 1;
 }
 
 
-/* запасная поддержка старого класса */
+/* ==========================================================
+   СТАРЫЙ CHAPTER-NAV
+   Оставлен на случай, если где-то сохранился старый HTML
+   ========================================================== */
 
 .chapter-nav {
     width: min(860px, calc(100% - 50px));
@@ -529,7 +583,7 @@ body > footer:not(.chapter-nav) {
 
 
 /* ==========================================================
-   ВИЗУАЛЬНАЯ ОБЛОЖКА INDEX.HTML
+   НОВАЯ ВИЗУАЛЬНАЯ ОБЛОЖКА INDEX.HTML
    ========================================================== */
 
 .splash-page {
@@ -541,7 +595,7 @@ body > footer:not(.chapter-nav) {
 }
 
 
-.splash {
+.splash-new {
     position: relative;
 
     width: 100%;
@@ -554,64 +608,52 @@ body > footer:not(.chapter-nav) {
     align-items: center;
     justify-content: center;
 
+    overflow: hidden;
+
     background:
-        url("assets/piter-cover.jpg")
+        url("assets/piter-cover-1.png")
         center center / cover no-repeat;
 }
 
 
-.splash::before {
-    content: "";
+/* Затемнение поверх фотографии */
 
+.splash-new-overlay {
     position: absolute;
+
     inset: 0;
+
+    z-index: 1;
 
     background:
         linear-gradient(
             180deg,
-            rgba(15, 28, 38, 0.20) 0%,
-            rgba(20, 32, 40, 0.14) 40%,
-            rgba(10, 20, 28, 0.38) 100%
+            rgba(9, 19, 29, 0.18) 0%,
+            rgba(10, 20, 31, 0.12) 38%,
+            rgba(7, 15, 23, 0.42) 100%
         );
-
-    z-index: 1;
 }
 
 
-.splash-shade {
-    position: absolute;
-    inset: 0;
+/* Текст обложки */
 
-    z-index: 2;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 35%,
-            rgba(10, 18, 24, 0.34) 100%
-        );
-
-    pointer-events: none;
-}
-
-
-.splash-content {
+.splash-new-content {
     position: relative;
 
-    z-index: 3;
+    z-index: 2;
 
     width: min(760px, calc(100% - 50px));
 
     text-align: center;
 
-    color: #f6f3ec;
+    color: #f8f4ec;
 
     text-shadow:
-        0 2px 14px rgba(0, 0, 0, 0.36);
+        0 2px 16px rgba(0, 0, 0, 0.48);
 }
 
 
-.splash-type {
+.splash-new-type {
     margin-bottom: 28px;
 
     font-family: "Literata", serif;
@@ -622,16 +664,18 @@ body > footer:not(.chapter-nav) {
 
     text-transform: uppercase;
 
-    opacity: 0.82;
+    opacity: 0.88;
 }
 
 
-.splash-title {
-    color: #f8f5ef;
+.splash-new-title {
+    margin: 0;
+
+    color: #f8f4ec;
 
     font-family: "Cormorant Garamond", Georgia, serif;
 
-    font-size: clamp(58px, 7vw, 92px);
+    font-size: clamp(62px, 7vw, 94px);
 
     font-weight: 600;
 
@@ -641,17 +685,18 @@ body > footer:not(.chapter-nav) {
 }
 
 
-.splash-line {
-    width: 95px;
+.splash-new-line {
+    width: 92px;
     height: 1px;
 
-    margin: 38px auto 27px;
+    margin: 38px auto 26px;
 
-    background: rgba(255, 255, 255, 0.65);
+    background:
+        rgba(255, 255, 255, 0.72);
 }
 
 
-.splash-city {
+.splash-new-city {
     font-family: "Literata", serif;
 
     font-size: 13px;
@@ -660,18 +705,19 @@ body > footer:not(.chapter-nav) {
 
     text-transform: uppercase;
 
-    opacity: 0.82;
+    opacity: 0.90;
 }
 
 
-.splash-button {
+.splash-new-button {
     display: inline-block;
 
-    margin-top: 65px;
+    margin-top: 62px;
 
     padding: 14px 38px;
 
-    border: 1px solid rgba(255, 255, 255, 0.72);
+    border:
+        1px solid rgba(255, 255, 255, 0.78);
 
     color: #ffffff;
 
@@ -683,29 +729,35 @@ body > footer:not(.chapter-nav) {
 
     text-decoration: none;
 
-    background: rgba(20, 30, 38, 0.18);
+    background:
+        rgba(8, 18, 28, 0.22);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
 
     transition:
-        background 0.3s ease,
+        background-color 0.3s ease,
         transform 0.3s ease;
 }
 
 
-.splash-button:hover {
-    background: rgba(255, 255, 255, 0.15);
+.splash-new-button:hover {
+    background:
+        rgba(255, 255, 255, 0.14);
 
     transform: translateY(-2px);
 }
 
 
 /* ==========================================================
-   МОБИЛЬНЫЕ
+   МОБИЛЬНАЯ ВЕРСИЯ
    ========================================================== */
 
 @media (max-width: 700px) {
 
     body {
         font-size: 17px;
+
         line-height: 1.68;
 
         background:
@@ -720,7 +772,9 @@ body > footer:not(.chapter-nav) {
     }
 
 
-    /* story.html */
+    /* ------------------------------------------------------
+       STORY.HTML
+       ------------------------------------------------------ */
 
     .cover {
         min-height: 100svh;
@@ -745,9 +799,11 @@ body > footer:not(.chapter-nav) {
 
         padding: 34px 20px 36px;
 
-        background: rgba(250, 249, 246, 0.82);
+        background:
+            rgba(250, 249, 246, 0.82);
 
-        border: 1px solid rgba(255, 255, 255, 0.65);
+        border:
+            1px solid rgba(255, 255, 255, 0.65);
 
         box-shadow:
             0 15px 45px rgba(25, 40, 50, 0.14);
@@ -759,6 +815,7 @@ body > footer:not(.chapter-nav) {
 
     h1 {
         font-size: 39px;
+
         line-height: 1.02;
 
         letter-spacing: -0.5px;
@@ -821,7 +878,9 @@ body > footer:not(.chapter-nav) {
     }
 
 
-    /* главы */
+    /* ------------------------------------------------------
+       ГЛАВЫ
+       ------------------------------------------------------ */
 
     .chapter {
         width: calc(100% - 26px);
@@ -830,7 +889,8 @@ body > footer:not(.chapter-nav) {
 
         padding: 42px 24px 62px;
 
-        background: rgba(251, 250, 247, 0.76);
+        background:
+            rgba(251, 250, 247, 0.76);
     }
 
 
@@ -877,31 +937,49 @@ body > footer:not(.chapter-nav) {
     }
 
 
+    /* ------------------------------------------------------
+       МОБИЛЬНАЯ НАВИГАЦИЯ
+
+       ← 1       Начало       3 →
+                   Обложка
+       ------------------------------------------------------ */
+
     .navigation {
         gap: 8px;
 
-        margin-top: 60px;
+        margin-top: 58px;
 
-        padding-top: 24px;
+        padding-top: 22px;
 
-        font-size: 13px;
+        font-size: 14px;
     }
 
 
-    .navigation a:first-child {
-        text-align: left;
+    .navigation a {
+        min-width: 42px;
+        min-height: 42px;
+
+        padding: 0 7px;
     }
 
 
-    .navigation a:last-child {
-        text-align: right;
+    .navigation > a:nth-child(2) {
+        min-width: auto;
+
+        padding: 0 10px;
+
+        border-radius: 4px;
     }
 
 
     .chapter-cover-link {
-        margin-top: 20px;
+        margin-top: 14px;
 
         font-size: 11px;
+
+        letter-spacing: 0.7px;
+
+        opacity: 0.68;
     }
 
 
@@ -914,22 +992,24 @@ body > footer:not(.chapter-nav) {
     }
 
 
-    /* визуальная обложка index.html */
+    /* ------------------------------------------------------
+       INDEX.HTML — НОВАЯ ОБЛОЖКА
+       ------------------------------------------------------ */
 
-    .splash {
-        background-position: 68% center;
+    .splash-new {
+        background-position: 58% center;
     }
 
 
-    .splash-content {
-        width: calc(100% - 52px);
+    .splash-new-content {
+        width: calc(100% - 44px);
 
-        transform: translateY(-2vh);
+        transform: translateY(-4vh);
     }
 
 
-    .splash-type {
-        margin-bottom: 23px;
+    .splash-new-type {
+        margin-bottom: 22px;
 
         font-size: 10px;
 
@@ -937,29 +1017,29 @@ body > footer:not(.chapter-nav) {
     }
 
 
-    .splash-title {
-        font-size: 52px;
+    .splash-new-title {
+        font-size: 50px;
 
         line-height: 0.96;
     }
 
 
-    .splash-line {
-        width: 75px;
+    .splash-new-line {
+        width: 72px;
 
-        margin: 30px auto 23px;
+        margin: 28px auto 22px;
     }
 
 
-    .splash-city {
+    .splash-new-city {
         font-size: 11px;
 
         letter-spacing: 4px;
     }
 
 
-    .splash-button {
-        margin-top: 52px;
+    .splash-new-button {
+        margin-top: 46px;
 
         padding: 13px 34px;
 
@@ -1009,216 +1089,25 @@ body > footer:not(.chapter-nav) {
 
 
     .navigation {
-        font-size: 12px;
-    }
-
-
-    .splash-title {
-        font-size: 46px;
-    }
-}
-
-
-/* ==========================================================
-   НОВАЯ ОБЛОЖКА
-   ========================================================== */
-
-.splash-new {
-    position: relative;
-
-    min-height: 100vh;
-    min-height: 100svh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background:
-        url("assets/piter-cover-1.png")
-        center center / cover no-repeat;
-}
-
-
-.splash-new-overlay {
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(9, 19, 29, 0.18) 0%,
-            rgba(10, 20, 31, 0.12) 38%,
-            rgba(7, 15, 23, 0.42) 100%
-        );
-
-    z-index: 1;
-}
-
-
-.splash-new-content {
-    position: relative;
-    z-index: 2;
-
-    width: min(760px, calc(100% - 50px));
-
-    text-align: center;
-
-    color: #f8f4ec;
-
-    text-shadow:
-        0 2px 16px rgba(0, 0, 0, 0.48);
-}
-
-
-.splash-new-type {
-    margin-bottom: 28px;
-
-    font-family: "Literata", serif;
-
-    font-size: 12px;
-
-    letter-spacing: 7px;
-
-    text-transform: uppercase;
-
-    opacity: 0.88;
-}
-
-
-.splash-new-title {
-    margin: 0;
-
-    color: #f8f4ec;
-
-    font-family: "Cormorant Garamond", Georgia, serif;
-
-    font-size: clamp(62px, 7vw, 94px);
-
-    font-weight: 600;
-
-    line-height: 0.94;
-
-    letter-spacing: -1px;
-}
-
-
-.splash-new-line {
-    width: 92px;
-    height: 1px;
-
-    margin: 38px auto 26px;
-
-    background: rgba(255, 255, 255, 0.72);
-}
-
-
-.splash-new-city {
-    font-family: "Literata", serif;
-
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    opacity: 0.9;
-}
-
-
-.splash-new-button {
-    display: inline-block;
-
-    margin-top: 62px;
-
-    padding: 14px 38px;
-
-    border: 1px solid rgba(255, 255, 255, 0.78);
-
-    color: #ffffff;
-
-    font-family: "Literata", serif;
-
-    font-size: 14px;
-
-    letter-spacing: 1.5px;
-
-    text-decoration: none;
-
-    background: rgba(8, 18, 28, 0.22);
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.18);
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.splash-new-button:hover {
-    background: rgba(255, 255, 255, 0.14);
-
-    transform: translateY(-2px);
-}
-
-
-/* мобильная версия */
-
-@media (max-width: 700px) {
-
-    .splash-new {
-        background-position: 58% center;
-    }
-
-    .splash-new-content {
-        width: calc(100% - 44px);
-
-        transform: translateY(-4vh);
-    }
-
-    .splash-new-type {
-        margin-bottom: 22px;
-
-        font-size: 10px;
-
-        letter-spacing: 5px;
-    }
-
-    .splash-new-title {
-        font-size: 50px;
-
-        line-height: 0.96;
-    }
-
-    .splash-new-line {
-        width: 72px;
-
-        margin: 28px auto 22px;
-    }
-
-    .splash-new-city {
-        font-size: 11px;
-
-        letter-spacing: 4px;
-    }
-
-    .splash-new-button {
-        margin-top: 46px;
-
-        padding: 13px 34px;
-
         font-size: 13px;
     }
-}
 
 
-@media (max-width: 430px) {
+    .navigation a {
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+
+    .chapter-cover-link {
+        font-size: 10.5px;
+    }
+
 
     .splash-new {
         background-position: 60% center;
     }
+
 
     .splash-new-title {
         font-size: 45px;
