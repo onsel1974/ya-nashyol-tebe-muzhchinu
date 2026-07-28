@@ -220,7 +220,7 @@ h1 {
 
 
 /* ----------------------------------------------------------
-   Кнопка "Начать читать"
+   Кнопки
    ---------------------------------------------------------- */
 
 .start-button {
@@ -501,27 +501,34 @@ body > footer:not(.chapter-nav) {
     .cover {
         min-height: 100svh;
 
-        padding: 26px 14px;
+        padding: 14px 10px 20px;
 
         background-attachment: scroll;
     }
 
 
     .cover-content {
-        padding: 40px 23px 44px;
+        width: 100%;
 
-        background: rgba(250, 249, 246, 0.77);
+        padding: 34px 20px 36px;
+
+        background: rgba(250, 249, 246, 0.70);
+
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
 
 
     h1 {
-        font-size: 48px;
+        font-size: 39px;
         line-height: 1.02;
+
+        letter-spacing: -0.5px;
     }
 
 
     .book-type {
-        margin-bottom: 25px;
+        margin-bottom: 18px;
 
         font-size: 10px;
 
@@ -530,28 +537,42 @@ body > footer:not(.chapter-nav) {
 
 
     .divider {
-        margin: 30px auto;
+        width: 100px;
+
+        margin: 24px auto;
     }
 
 
     .annotation {
-        font-size: 17px;
+        margin-bottom: 18px;
 
-        line-height: 1.7;
+        font-size: 16px;
+
+        line-height: 1.62;
     }
 
 
     .annotation.accent {
-        margin-top: 30px;
+        margin-top: 24px;
+        margin-bottom: 18px;
 
-        font-size: 29px;
+        font-size: 27px;
+
+        line-height: 1.2;
     }
 
 
     .start-button {
-        margin-top: 32px;
+        margin-top: 26px;
 
-        padding: 15px 30px;
+        padding: 12px 24px;
+
+        font-size: 15px;
+    }
+
+
+    #continue-reading {
+        margin-top: 12px !important;
     }
 
 
@@ -651,13 +672,23 @@ body > footer:not(.chapter-nav) {
 @media (max-width: 430px) {
 
     h1 {
-        font-size: 43px;
+        font-size: 37px;
     }
 
 
     .cover-content {
-        padding-left: 19px;
-        padding-right: 19px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .annotation {
+        font-size: 15.5px;
+    }
+
+
+    .annotation.accent {
+        font-size: 26px;
     }
 
 
