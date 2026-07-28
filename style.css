@@ -1017,3 +1017,210 @@ body > footer:not(.chapter-nav) {
         font-size: 46px;
     }
 }
+
+
+/* ==========================================================
+   НОВАЯ ОБЛОЖКА
+   ========================================================== */
+
+.splash-new {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        url("assets/piter-cover-1.png")
+        center center / cover no-repeat;
+}
+
+
+.splash-new-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(9, 19, 29, 0.18) 0%,
+            rgba(10, 20, 31, 0.12) 38%,
+            rgba(7, 15, 23, 0.42) 100%
+        );
+
+    z-index: 1;
+}
+
+
+.splash-new-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(760px, calc(100% - 50px));
+
+    text-align: center;
+
+    color: #f8f4ec;
+
+    text-shadow:
+        0 2px 16px rgba(0, 0, 0, 0.48);
+}
+
+
+.splash-new-type {
+    margin-bottom: 28px;
+
+    font-family: "Literata", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    opacity: 0.88;
+}
+
+
+.splash-new-title {
+    margin: 0;
+
+    color: #f8f4ec;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(62px, 7vw, 94px);
+
+    font-weight: 600;
+
+    line-height: 0.94;
+
+    letter-spacing: -1px;
+}
+
+
+.splash-new-line {
+    width: 92px;
+    height: 1px;
+
+    margin: 38px auto 26px;
+
+    background: rgba(255, 255, 255, 0.72);
+}
+
+
+.splash-new-city {
+    font-family: "Literata", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0.9;
+}
+
+
+.splash-new-button {
+    display: inline-block;
+
+    margin-top: 62px;
+
+    padding: 14px 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.78);
+
+    color: #ffffff;
+
+    font-family: "Literata", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    background: rgba(8, 18, 28, 0.22);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.splash-new-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+
+    transform: translateY(-2px);
+}
+
+
+/* мобильная версия */
+
+@media (max-width: 700px) {
+
+    .splash-new {
+        background-position: 58% center;
+    }
+
+    .splash-new-content {
+        width: calc(100% - 44px);
+
+        transform: translateY(-4vh);
+    }
+
+    .splash-new-type {
+        margin-bottom: 22px;
+
+        font-size: 10px;
+
+        letter-spacing: 5px;
+    }
+
+    .splash-new-title {
+        font-size: 50px;
+
+        line-height: 0.96;
+    }
+
+    .splash-new-line {
+        width: 72px;
+
+        margin: 28px auto 22px;
+    }
+
+    .splash-new-city {
+        font-size: 11px;
+
+        letter-spacing: 4px;
+    }
+
+    .splash-new-button {
+        margin-top: 46px;
+
+        padding: 13px 34px;
+
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .splash-new {
+        background-position: 60% center;
+    }
+
+    .splash-new-title {
+        font-size: 45px;
+    }
+}
