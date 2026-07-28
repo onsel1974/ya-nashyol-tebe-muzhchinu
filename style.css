@@ -492,6 +492,14 @@ body > footer:not(.chapter-nav) {
         font-size: 17px;
         line-height: 1.68;
 
+        background:
+            linear-gradient(
+                rgba(235, 238, 240, 0.30),
+                rgba(245, 242, 237, 0.40)
+            ),
+            url("assets/piter-watermark.png")
+            60% center / cover no-repeat;
+
         background-attachment: scroll;
     }
 
@@ -499,23 +507,36 @@ body > footer:not(.chapter-nav) {
     /* Главная */
 
     .cover {
-    min-height: 100svh;
+        min-height: 100svh;
 
-    padding: 22px 16px 32px;
+        padding: 22px 20px 32px;
 
-    background-attachment: scroll;
+        background:
+            linear-gradient(
+                rgba(235, 238, 240, 0.08),
+                rgba(235, 238, 240, 0.16)
+            ),
+            url("assets/piter-cover.jpg")
+            68% center / cover no-repeat;
+
+        background-attachment: scroll;
+    }
+
+
+    .cover::before {
+        background: none;
     }
 
 
     .cover-content {
-    width: calc(100% - 12px);
+        width: calc(100% - 28px);
 
-    padding: 34px 20px 36px;
+        padding: 34px 20px 36px;
 
-    background: rgba(250, 249, 246, 0.70);
+        background: rgba(250, 249, 246, 0.76);
 
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
     }
 
 
@@ -585,7 +606,7 @@ body > footer:not(.chapter-nav) {
 
         padding: 42px 24px 62px;
 
-        background: rgba(251, 250, 247, 0.84);
+        background: rgba(251, 250, 247, 0.76);
     }
 
 
