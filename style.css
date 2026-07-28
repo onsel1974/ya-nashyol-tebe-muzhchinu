@@ -62,7 +62,6 @@ body {
 
 .progress {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -78,7 +77,7 @@ body {
 
 
 /* ==========================================================
-   ГЛАВНАЯ СТРАНИЦА
+   ВНУТРЕННЯЯ СТРАНИЦА STORY.HTML
    ========================================================== */
 
 .cover {
@@ -120,8 +119,6 @@ body {
 }
 
 
-/* Карточка на главной */
-
 .cover-content {
     position: relative;
     z-index: 2;
@@ -145,8 +142,6 @@ body {
 }
 
 
-/* слово "рассказ" */
-
 .book-type {
     margin-bottom: 34px;
 
@@ -162,8 +157,6 @@ body {
 }
 
 
-/* Главное название */
-
 h1 {
     color: var(--title);
 
@@ -178,8 +171,6 @@ h1 {
 }
 
 
-/* линия под названием */
-
 .divider {
     width: 110px;
     height: 1px;
@@ -191,8 +182,6 @@ h1 {
     opacity: 0.45;
 }
 
-
-/* Аннотация */
 
 .annotation {
     max-width: 610px;
@@ -251,6 +240,7 @@ h1 {
         box-shadow 0.3s ease;
 }
 
+
 .start-button:hover {
     color: white;
 
@@ -260,6 +250,35 @@ h1 {
 
     box-shadow:
         0 8px 20px rgba(69, 92, 110, 0.18);
+}
+
+
+/* ссылка обратно на обложку со story.html */
+
+.cover-link {
+    display: block;
+
+    margin-top: 28px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    letter-spacing: 0.4px;
+
+    opacity: 0.85;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.cover-link:hover {
+    color: var(--accent-dark);
+    opacity: 1;
 }
 
 
@@ -357,8 +376,6 @@ h1 {
 }
 
 
-/* Финальные строки */
-
 .ending {
     margin-top: 38px;
 
@@ -426,6 +443,37 @@ h1 {
 }
 
 
+/* ссылка на визуальную обложку под навигацией */
+
+.chapter-cover-link {
+    display: block;
+
+    margin-top: 24px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+
+    opacity: 0.75;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.chapter-cover-link:hover {
+    color: var(--accent-dark);
+    opacity: 1;
+}
+
+
 /* запасная поддержка старого класса */
 
 .chapter-nav {
@@ -464,7 +512,7 @@ h1 {
 
 
 /* ==========================================================
-   FOOTER ГЛАВНОЙ
+   FOOTER
    ========================================================== */
 
 body > footer:not(.chapter-nav) {
@@ -477,6 +525,176 @@ body > footer:not(.chapter-nav) {
     font-size: 12px;
 
     letter-spacing: 0.4px;
+}
+
+
+/* ==========================================================
+   ВИЗУАЛЬНАЯ ОБЛОЖКА INDEX.HTML
+   ========================================================== */
+
+.splash-page {
+    margin: 0;
+
+    background: #17222a;
+
+    overflow: hidden;
+}
+
+
+.splash {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        url("assets/piter-cover.jpg")
+        center center / cover no-repeat;
+}
+
+
+.splash::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15, 28, 38, 0.20) 0%,
+            rgba(20, 32, 40, 0.14) 40%,
+            rgba(10, 20, 28, 0.38) 100%
+        );
+
+    z-index: 1;
+}
+
+
+.splash-shade {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0) 35%,
+            rgba(10, 18, 24, 0.34) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+.splash-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(760px, calc(100% - 50px));
+
+    text-align: center;
+
+    color: #f6f3ec;
+
+    text-shadow:
+        0 2px 14px rgba(0, 0, 0, 0.36);
+}
+
+
+.splash-type {
+    margin-bottom: 28px;
+
+    font-family: "Literata", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    opacity: 0.82;
+}
+
+
+.splash-title {
+    color: #f8f5ef;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(58px, 7vw, 92px);
+
+    font-weight: 600;
+
+    line-height: 0.94;
+
+    letter-spacing: -1px;
+}
+
+
+.splash-line {
+    width: 95px;
+    height: 1px;
+
+    margin: 38px auto 27px;
+
+    background: rgba(255, 255, 255, 0.65);
+}
+
+
+.splash-city {
+    font-family: "Literata", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0.82;
+}
+
+
+.splash-button {
+    display: inline-block;
+
+    margin-top: 65px;
+
+    padding: 14px 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.72);
+
+    color: #ffffff;
+
+    font-family: "Literata", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    background: rgba(20, 30, 38, 0.18);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.splash-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: translateY(-2px);
 }
 
 
@@ -502,7 +720,7 @@ body > footer:not(.chapter-nav) {
     }
 
 
-    /* Главная */
+    /* story.html */
 
     .cover {
         min-height: 100svh;
@@ -596,7 +814,14 @@ body > footer:not(.chapter-nav) {
     }
 
 
-    /* Главы */
+    .cover-link {
+        margin-top: 22px;
+
+        font-size: 12px;
+    }
+
+
+    /* главы */
 
     .chapter {
         width: calc(100% - 26px);
@@ -652,8 +877,6 @@ body > footer:not(.chapter-nav) {
     }
 
 
-    /* Навигация */
-
     .navigation {
         gap: 8px;
 
@@ -675,6 +898,13 @@ body > footer:not(.chapter-nav) {
     }
 
 
+    .chapter-cover-link {
+        margin-top: 20px;
+
+        font-size: 11px;
+    }
+
+
     .chapter-nav {
         width: calc(100% - 30px);
 
@@ -682,237 +912,9 @@ body > footer:not(.chapter-nav) {
 
         font-size: 13px;
     }
-}
 
 
-/* ==========================================================
-   ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ
-   ========================================================== */
-
-@media (max-width: 430px) {
-
-    h1 {
-        font-size: 37px;
-    }
-
-
-    .cover-content {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-
-    .annotation {
-        font-size: 15.5px;
-    }
-
-
-    .annotation.accent {
-        font-size: 26px;
-    }
-
-
-    .chapter {
-        width: calc(100% - 22px);
-
-        padding-left: 21px;
-        padding-right: 21px;
-    }
-
-
-    .chapter-title {
-        font-size: 40px;
-    }
-
-
-    .navigation {
-        font-size: 12px;
-    }
-}
-
-
-/* ==========================================================
-   ВИЗУАЛЬНАЯ ОБЛОЖКА
-   ========================================================== */
-
-.splash-page {
-    margin: 0;
-
-    background: #17222a;
-
-    overflow: hidden;
-}
-
-
-.splash {
-    position: relative;
-
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        url("assets/piter-cover.jpg")
-        center center / cover no-repeat;
-}
-
-
-/* Затемнение фотографии */
-
-.splash::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(15, 28, 38, 0.20) 0%,
-            rgba(20, 32, 40, 0.14) 40%,
-            rgba(10, 20, 28, 0.38) 100%
-        );
-
-    z-index: 1;
-}
-
-
-/* лёгкая виньетка */
-
-.splash-shade {
-    position: absolute;
-    inset: 0;
-
-    z-index: 2;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 35%,
-            rgba(10, 18, 24, 0.34) 100%
-        );
-
-    pointer-events: none;
-}
-
-
-/* Текст */
-
-.splash-content {
-    position: relative;
-
-    z-index: 3;
-
-    width: min(760px, calc(100% - 50px));
-
-    text-align: center;
-
-    color: #f6f3ec;
-
-    text-shadow:
-        0 2px 14px rgba(0, 0, 0, 0.36);
-}
-
-
-.splash-type {
-    margin-bottom: 28px;
-
-    font-family: "Literata", serif;
-
-    font-size: 12px;
-
-    letter-spacing: 7px;
-
-    text-transform: uppercase;
-
-    opacity: 0.82;
-}
-
-
-.splash-title {
-    color: #f8f5ef;
-
-    font-family: "Cormorant Garamond", Georgia, serif;
-
-    font-size: clamp(58px, 7vw, 92px);
-
-    font-weight: 600;
-
-    line-height: 0.94;
-
-    letter-spacing: -1px;
-}
-
-
-.splash-line {
-    width: 95px;
-    height: 1px;
-
-    margin: 38px auto 27px;
-
-    background: rgba(255, 255, 255, 0.65);
-}
-
-
-.splash-city {
-    font-family: "Literata", serif;
-
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    opacity: 0.82;
-}
-
-
-/* Кнопка */
-
-.splash-button {
-    display: inline-block;
-
-    margin-top: 65px;
-
-    padding: 14px 38px;
-
-    border: 1px solid rgba(255, 255, 255, 0.72);
-
-    color: #ffffff;
-
-    font-family: "Literata", serif;
-
-    font-size: 14px;
-
-    letter-spacing: 1.5px;
-
-    text-decoration: none;
-
-    background: rgba(20, 30, 38, 0.18);
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.splash-button:hover {
-    background: rgba(255, 255, 255, 0.15);
-
-    transform: translateY(-2px);
-}
-
-
-/* ==========================================================
-   ОБЛОЖКА НА ТЕЛЕФОНЕ
-   ========================================================== */
-
-@media (max-width: 700px) {
+    /* визуальная обложка index.html */
 
     .splash {
         background-position: 68% center;
@@ -966,7 +968,50 @@ body > footer:not(.chapter-nav) {
 }
 
 
+/* ==========================================================
+   ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ
+   ========================================================== */
+
 @media (max-width: 430px) {
+
+    h1 {
+        font-size: 37px;
+    }
+
+
+    .cover-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .annotation {
+        font-size: 15.5px;
+    }
+
+
+    .annotation.accent {
+        font-size: 26px;
+    }
+
+
+    .chapter {
+        width: calc(100% - 22px);
+
+        padding-left: 21px;
+        padding-right: 21px;
+    }
+
+
+    .chapter-title {
+        font-size: 40px;
+    }
+
+
+    .navigation {
+        font-size: 12px;
+    }
+
 
     .splash-title {
         font-size: 46px;
